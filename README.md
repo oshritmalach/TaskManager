@@ -31,17 +31,43 @@ The Task Manager is a simple RESTapi service for managing tasks. It supports cre
    ```bash
    go run main.go
    ```
+## Testing
+   Run the tests with:
+   ```bash
+    go test ./repository ./handler -v
+   ```
 
----
+## Using the Makefile
+
+This project includes a `Makefile` to simplify common tasks. Below are the available commands and their usage:
+
+1. **Build the Project**
+   ```bash
+   make build
+   ```
+2. **Run the Project**
+   ```bash
+   make run
+   ```
+3. **Test the Project**
+   ```bash
+   make test
+   ```
+3. **Lint the Project**
+   ```bash
+   make lint
+   ```
+   
+   
 
 ## Usage
 
 ### API Endpoints
 | Method | Endpoint               | Description         | Example Request Body                           |
 |--------|-------------------------|---------------------|-----------------------------------------------|
+| GET    | `/tasks`               | Get all tasks       | -                                             |
 | POST   | `/task`                | Create a new task   | `{ "title": "Task 1", "description": "Test description", "status": "open" }` |
 | GET    | `/task/{id}`           | Get a task by ID    | -                                             |
-| GET    | `/tasks`               | Get all tasks       | -                                             |
 | POST   | `/task/{id}`           | Update a task by ID | `{ "title": "Updated Title" }`                |
 | DELETE | `/task/{id}`           | Delete a task by ID | -                                             |
 
@@ -140,10 +166,5 @@ All failed requests return a response in a unified JSON structure containing the
 }
 ```
 
-## Testing
 
-Run the tests with:
-```bash
- go test ./repository ./handler -v
-```
 
