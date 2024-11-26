@@ -125,7 +125,6 @@ func TestAddAndGetTaskHandler(t *testing.T) {
 		t.Errorf("expected status code %d, got %d", http.StatusOK, resp.StatusCode)
 	}
 
-	// 4. קריאת התשובה והשוואת הערכים
 	var task model.Task
 	if err := json.NewDecoder(resp.Body).Decode(&task); err != nil {
 		t.Fatalf("failed to decode response: %v", err)

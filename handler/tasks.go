@@ -24,7 +24,7 @@ func (h *TaskHandler) AddTask(w http.ResponseWriter, r *http.Request) {
 	var newTask model.Task
 	err = json.NewDecoder(r.Body).Decode(&newTask)
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Invalid request body"))
+		respondWithError(w, http.StatusInternalServerError, "Invalid request body")
 		return
 	}
 
@@ -79,7 +79,7 @@ func (h *TaskHandler) UpdateTask(w http.ResponseWriter, r *http.Request) {
 
 	var updatedTask model.Task
 	if err = json.NewDecoder(r.Body).Decode(&updatedTask); err != nil {
-		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Invalid request body"))
+		respondWithError(w, http.StatusInternalServerError, "Invalid request body")
 		return
 	}
 

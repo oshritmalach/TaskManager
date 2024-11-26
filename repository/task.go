@@ -3,7 +3,6 @@ package repository
 import (
 	"Checkmarx/helpers"
 	"Checkmarx/model"
-	"errors"
 	"fmt"
 	"sync"
 	"time"
@@ -46,7 +45,7 @@ func (tm *TaskManager) Update(id int, updatedTask model.Task) (model.Task, error
 	defer tm.mu.Unlock()
 	task, exists := tm.tasks[id]
 	if !exists {
-		return model.Task{}, errors.New(fmt.Sprintf("task number %d does not exist", id))
+		return model.Task{}, fmt.Errorf("task number %d does not exist", id)
 	}
 
 	if valid, err := helpers.ValidateTaskUpdate(updatedTask); !valid {

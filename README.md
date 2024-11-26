@@ -16,7 +16,7 @@ The Task Manager is a simple RESTapi service for managing tasks. It supports cre
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/task-manager.git
+   git clone https://github.com/oshritmalach/task-manager.git
    ```
 2. Navigate to the project directory:
    ```bash
