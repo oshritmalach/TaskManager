@@ -22,8 +22,8 @@ jobs:
           mkdir -p ${HOME}/bin
           curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b ${HOME}/bin v1.54.2
 
-      - name: Add Bin to PATH
-        run: echo "${HOME}/bin" >> $GITHUB_PATH
+      - name: Add Go Bin to PATH
+        run: echo "${HOME}/go/bin:/usr/local/bin" >> $GITHUB_PATH
 
       - name: Run Linter
         run: make lint
